@@ -95,6 +95,7 @@ function App() {
           </div>
         )}
       </main>
+      {/* Footer */}
       <Footer/>
       {/* Toast Notifications */}
       <ToastContainer position="top-right" autoClose={2000} />
