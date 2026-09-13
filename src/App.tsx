@@ -8,6 +8,7 @@ import TechnologyGrid from "./components/TechnologyGrid";
 import YourStack from "./components/YourStack";
 
 import type { Technology } from "./types/technology";
+import Footer from "./components/Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <>
+     
       {/* Navbar */}
       <Navbar />
 
@@ -93,7 +95,7 @@ function App() {
           </div>
         )}
       </main>
-
+      <Footer/>
       {/* Toast Notifications */}
       <ToastContainer position="top-right" autoClose={2000} />
     </>
