@@ -2,9 +2,10 @@ import type { Technology } from "../types/technology";
 
 interface TechnologyCardProps {
   technology: Technology;
+  addToStack: (technology: Technology) => void;
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology, addToStack }: TechnologyCardProps) => {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5">
       <span className="inline-block rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-600">
@@ -19,6 +20,9 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         {technology.description}
       </p>
 
+      <p className="mt-3 text-sm text-slate-500">
+        Difficulty: {technology.difficulty}
+      </p>
       <div className="mt-4 flex items-center justify-between">
         <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">
           {technology.category}
@@ -27,7 +31,10 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         <span className="text-sm text-slate-600">⭐ {technology.rating}</span>
       </div>
 
-      <button className="mt-4 w-full rounded-md bg-slate-900 py-2.5 text-sm font-medium text-white">
+      <button
+        onClick={() => addToStack(technology)}
+        className="mt-4 w-full rounded-md bg-slate-900 py-2.5 text-sm font-medium text-white"
+      >
         Add to Stack
       </button>
     </div>
